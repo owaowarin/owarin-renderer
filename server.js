@@ -38,7 +38,7 @@ app.post('/v1/image', async (req, res) => {
   try {
     const b    = await getBrowser();
     const page = await b.newPage();
-    await page.setViewport({ width, height, deviceScaleFactor: 1 });
+    await page.setViewport({ width, height, deviceScaleFactor: 2 });
     await page.setContent(html, { waitUntil: 'networkidle0', timeout: 30000 });
     // Extra wait for fonts/images
     await new Promise(r => setTimeout(r, 1500));
